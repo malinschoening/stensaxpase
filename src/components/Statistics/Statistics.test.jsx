@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Statistics from './Statistics';
+import changeYourScore from '../PlayGame/PlayAgainstComputer'
 
 describe('Statistics component', () => {
     it('Should say Kör igång! when no choice has been made', () => {
@@ -49,5 +50,14 @@ describe('Statistics component', () => {
         render(<Statistics random={value} value={value} player1stats={0} player2stats={0}/>)
         const headline = screen.getByText(text)
         expect(headline).toBeInTheDocument()
+    })
+
+    it('Should not add point when playing the same hand', () => {
+        const value = 'Sten'
+        const title = '0 vs 0'
+        
+        render(<Statistics random={value} value={value} player1stats={0} player2stats={0}/>)
+        const headline = screen.getByText(title)
+        expect(headline).toBeInTheDocument();
     })
 })

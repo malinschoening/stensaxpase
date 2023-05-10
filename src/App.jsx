@@ -1,6 +1,6 @@
 import './App.css'
-import GameArea from './components/GameArea'
-import Menu from './components/Menu'
+import GameArea from './components/GameArea/GameArea'
+import Menu from './components/Menu/Menu'
 
 function App() {
 

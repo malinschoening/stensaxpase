@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import GameArea from './GameArea';
+import GameArea from '../GameArea/GameArea';
 
 const Menu = () => {
     const [mode, setMode] = useState();
@@ -19,8 +19,8 @@ const Menu = () => {
 
   return (
     <div id="button-container">
-      <button id="button" className={hidden ? '' : 'hidden'} onClick={computerMode}>Spela mot dator</button>
-      <button id="button" className={hidden ? '' : 'hidden'} onClick={playerMode}>Spela mot kompis</button>
+      <button name="computer" id="button" className={hidden ? '' : 'hidden'} onClick={computerMode}>Spela mot dator</button>
+      <button name="person" id="button" className={hidden ? '' : 'hidden'} onClick={playerMode}>Spela mot kompis</button>
       <div className={hidden ? 'hidden' : ''}><GameArea mode={mode}/></div>
 
     </div>

@@ -1,27 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import Button from './Button';
-import Computer from './Computer';
-import Statistics from './Statistics';
+import Button from '../Button/Button';
+import Computer from '../Computer/Computer';
+import Statistics from '../Statistics/Statistics';
+import StatisticsList from '../Statistics/StatisticsList';
 
 const PlayAgainstComputer = ({name}) => {
     const [value, setValue] = useState('');
     const [random, setRandom] = useState(' ');
     const [yourScore, setYourscore] = useState(0);
     const [computerScore, setComputerScore] = useState(0);
-    const [statistics, setStatistics] = useState([{}]);
     const availableValues = ['Sten', 'Sax', 'Påse'];
 
 const makeYourMove = (value) => {
     setValue(value);
     setRandom(availableValues[Math.floor(Math.random() * availableValues.length)])
-}
-
-const addToStatistics = () => {
-    setStatistics([
-        ...statistics,
-        {you: value, computer: random}
-      ])
-    console.log(statistics);
 }
 
 const changeYourScore = (value) => {
@@ -40,10 +32,6 @@ const yourMove = () => {
     }
 }
 
-useEffect(() => {
-    addToStatistics()
-}, [value]);
-
 return (
 <>
     <h1>Spel mot datorn</h1>
@@ -53,10 +41,12 @@ return (
     <div id="my-move">
     {
         yourMove()
-    }</div></div>
+    }</div>
+    </div>
+    <StatisticsList name={name} value={value} random={random}/>
     <div id="button-container">
     {
-    availableValues.map((title) => {
+        availableValues.map((title) => {
         return <Button key={title} name={title} makeYourMove={makeYourMove}/>
     })
 }</div>

@@ -8,7 +8,7 @@ const Button = ({ name, makeYourMove, disabled }) => {
     }
 
   return (
-    <button id="button" className="moves" onClick={handleClick} disabled={disabled ? 'disabled' : ''}>
+    <button name={name} id="button" className="moves" onClick={handleClick} disabled={disabled ? 'disabled' : ''}>
         {name}
     </button>
   )

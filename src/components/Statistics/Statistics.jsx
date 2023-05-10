@@ -40,10 +40,10 @@ const Statistics = ({ value, random, player1, player2, player1stats, setPlayer1s
     }
 
   return (
-    <>
-    <h1 id="statistics-component">{stats}</h1><br/>
-    <h2>{player1stats} vs {player2stats}</h2>
-    </>
+    <div id="statistics-component">
+    <h1 name="stats">{stats}</h1><br/>
+    <h2>{player2stats} vs {player1stats}</h2>
+    </div>
   )
 }
 

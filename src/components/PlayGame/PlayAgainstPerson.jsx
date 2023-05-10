@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Button from './Button';
-import Computer from './Computer';
-import Statistics from './Statistics';
+import Button from '../Button/Button';
+import Computer from '../Computer/Computer';
+import Statistics from '../Statistics/Statistics';
 
 const PlayAgainstPerson = ({player1, player2}) => {
     const [player1score, setPlayer1score] = useState('');
@@ -41,12 +41,14 @@ useEffect(() => {
 
   return (
     <>
-    <h1>{turn ? player1 + ' välj ditt drag'
-              : player2 + ' välj ditt drag'
+    <h1>{game ? ''
+              : turn ? player1 + ' välj ditt drag'
+                     : player2 + ' välj ditt drag'
         }</h1>
 
     { game ? 
             <>
+            <h1>{player1} vs {player2}</h1>
         <div id="game-area-component">
         <div id="player1-move">
             {player1} valde: {player1score}
