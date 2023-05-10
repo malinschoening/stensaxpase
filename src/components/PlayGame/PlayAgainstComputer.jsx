@@ -43,7 +43,6 @@ return (
         yourMove()
     }</div>
     </div>
-    <StatisticsList name={name} value={value} random={random}/>
     <div id="button-container">
     {
         availableValues.map((title) => {

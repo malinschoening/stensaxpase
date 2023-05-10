@@ -1,0 +1,8 @@
+TEST DOCUMENTATION
+
+- One test for each component that the right content is showing at the right time
+- Test that the logistics with the game is working (in Statistics)
+
+E2E
+- Test for playing a game against the computer
+- Test for playing a game against another person
